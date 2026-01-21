@@ -140,7 +140,11 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('auth')->name('dashboard');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
 
 
+
+Route::get('/login-admin', function () {
+    return view('auth.login_admin_page');
+})->name('login.admin.page');

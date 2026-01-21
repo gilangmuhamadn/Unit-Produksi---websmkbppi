@@ -134,7 +134,7 @@
     @endif
 @else
     <!-- Tombol Login Jika Belum Login -->
-    <li><a href="{{ route('login') }}" class="btn-login">Login Admin</a></li>
+    <li><!--<a href="{{ route('login') }}" class="btn-login">Login Admin</a>--></li>
 @endauth
 
             </ul>
@@ -416,9 +416,13 @@
 </a>
 
                     </div>
+
+                    <!--  PR -->
                     <div class="jurusan-image">
-                        <img src="{{ asset('storage/jurusan_logos/default-logo.png') }}" id="jurusan-logo" class="jurusan-logo" alt="Jurusan Logo">
+                        <img src="{{ asset('img/logosmk.png') }}" id="jurusan-logo" class="jurusan-logo" alt="Jurusan Logo">
                     </div>
+                    
+
                 </div>
             </div>
         </div>
@@ -503,7 +507,7 @@
 </section>
 
 
-<!-- testimoni start -->
+<!-- testimoni start 
 
 <section id="testimoni">
     <div class="testimonial-container hidden">
@@ -526,15 +530,16 @@
         @endforeach
     </div>
 </div>
-
-        <!-- Navigasi Titik -->
+-->
+        <!-- Navigasi Titik 
         <div class="testimonial-dots">
             @foreach ($testimonials as $index => $testimonial)
             <span class="dot {{ $index === 0 ? 'active' : '' }}" onclick="changeSlide({{ $index }})"></span>
             @endforeach
         </div>
+        -->
 
-        <!-- Tombol "Lihat Semua Testimoni" (Hanya Admin yang Bisa Melihat) -->
+        <!-- Tombol "Lihat Semua Testimoni" (Hanya Admin yang Bisa Melihat) 
         @if(auth()->user() && auth()->user()->role === 'admin')
         <div class="text-center mt-3">
             <a href="{{ route('admin.testimonial.index') }}" class="btn-testimonial">Lihat Semua Testimoni</a>
@@ -544,6 +549,7 @@
 </section>
 
 </section>
+            -->
 
 <!-- faq start -->
 <section id="faq">
@@ -619,18 +625,18 @@
             </div>
         </div>
         <div class="social-media">
-            <a href="https://www.instagram.com/smkbppi_be?igsh=MWFvZGRra3MxY2dhOQ==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/share/18mrjoLtwB/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.youtube.com/@SMKBPPI" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@smkbppibaleendah?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/smkbppi_be?igsh=MW5jdTZ4ajcwZ3A4cQ==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+            <!-- <a href="https://www.facebook.com/share/18mrjoLtwB/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@SMKBPPI" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a> -->
+            <a href="https://www.tiktok.com/@smkbppibaleendah?_r=1&_t=ZS-93FjFTnnv4H" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
         </div>
     </div>
 </section>
 
 <!-- Footer Section -->
 <footer>
-    <p>© Copyright <strong>Kelompok 2</strong>. All Rights Reserved</p>
-    <p>Developed by <strong>Kelompok 2</strong></p>
+    <p>© Copyright <strong>Unit Produksi PPLG</strong>. All Rights Reserved</p>
+    <p>Developed by <strong>SM Studio</strong></p>
 </footer>
 
 

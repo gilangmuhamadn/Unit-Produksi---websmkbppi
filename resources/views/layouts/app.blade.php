@@ -110,13 +110,12 @@
 <li class="dropdown">
     <a href="#">Program Keahlian</a>
     <ul class="dropdown-menu">
-        <li><a href="/jurusan/1">PPLG</a></li>
-        <li><a href="/jurusan/2">TJKT</a></li>
-        <li><a href="/jurusan/3">AKL</a></li>
-        <li><a href="/jurusan/4">ACP</a></li>
+        <li><a href="{{ url('jurusan/1') }}">PPLG</a></li>
+        <li><a href="{{ url('jurusan/2') }}">AKL</a></li>
+        <li><a href="{{ url('jurusan/4') }}">ACP</a></li>
+        <li><a href="{{ url('jurusan/3') }}">TJKT</a></li>
     </ul>
 </li>
-
 
                 <!-- Ekstrakurikuler -->
                 <li><a href="{{ route('ekskul.index') }}">Ekstrakurikuler</a></li>
@@ -161,7 +160,7 @@
     @endif
 @else
     <!-- Tombol Login Jika Belum Login -->
-    <li><a href="{{ route('login') }}" class="btn-login">Login Admin</a></li>
+    <li><!--<a href="{{ route('login') }}" class="btn-login">Login Admin</a>--></li>
 @endauth
 
     </header>

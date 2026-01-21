@@ -62,11 +62,16 @@ public function authenticated(Request $request)
     }
 
     // Logout
-    public function logout()
-    {
-        Auth::logout();
-        return redirect()->route('login')->with('success', 'Logout berhasil!');
-    }
+
+public function logout(Request $request)
+{
+    Auth::logout();
+
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect()->route('login')->with('success', 'Logout berhasil!');
+}
 
     // Tampilkan dashboard
     public function dashboard()
