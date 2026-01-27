@@ -2,7 +2,7 @@
 
 @section('content')
 <style>
-.container {
+.jurusan-container {
     display: flex;
     max-width: 1200px;
     margin: 20px auto;
@@ -218,7 +218,7 @@
 
 
 @media (max-width: 767px) {
-  .container {
+  .jurusan-container {
     margin-top: 70px; /* tambahkan jarak dari navbar */
     padding: 0 15px;
     flex-direction: column; /* untuk stack konten dan sidebar */
@@ -260,7 +260,7 @@
 
 </style>
 
-<div class="container">
+<div class="container jurusan-container">
     <!-- Kiri: Detail Jurusan -->
     <div class="left-content">
         @if ($jurusan->logo_jurusan)

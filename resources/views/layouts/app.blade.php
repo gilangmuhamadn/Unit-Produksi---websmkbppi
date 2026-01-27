@@ -232,11 +232,10 @@
             </div>
                 <!-- Media Sosial -->
                 <div class="social-media-footer mt-3">
-                <a href="https://www.instagram.com/smkbppi_be?igsh=MWFvZGRra3MxY2dhOQ==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/share/18mrjoLtwB/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.youtube.com/@SMKBPPI" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@smkbppibaleendah?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
-        </div>
+                    <a href="https://www.instagram.com/smkbppi_be?igsh=MW5jdTZ4ajcwZ3A4cQ==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="https://www.facebook.com/share/18mrjoLtwB/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@SMKBPPI" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a> -->
+                    <a href="https://www.tiktok.com/@smkbppibaleendah?_r=1&_t=ZS-93FjFTnnv4H" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
@@ -244,8 +243,8 @@
         <div class="footer-divider"></div>
 
         <div class="footer-text">
-            <p>© Copyright <strong>Kelompok 2</strong></p>
-            <p>Developed by <strong>Kelompok 2</strong></p>
+            <p>© Copyright <strong>Unit Produksi PPLG</strong></p>
+            <p>Developed by <strong>SM Studio</strong></p>
         </div>
     </div>
 </footer>
