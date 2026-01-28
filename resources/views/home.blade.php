@@ -634,7 +634,6 @@
 </section>
 
 <!-- Footer Section -->
-<!-- Footer Section -->
 <footer>
     <p>© Copyright <strong>Unit Produksi PPLG</strong>. All Rights Reserved</p>
     <p>Developed by <strong>SM Studio</strong></p>
