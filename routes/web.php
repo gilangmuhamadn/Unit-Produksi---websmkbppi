@@ -37,7 +37,7 @@ Route::get('/articles', [ArticleController::class, 'index'])->name('articles.ind
 Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
 
 
-Route::get('/staff', [StaffController::class, 'index'])->name('staff.index');
+Route::get('/tim-sekolah', [StaffController::class, 'index'])->name('tim_sekolah.index');
 Route::get('/staff/{id}', [StaffController::class, 'show'])->name('staff.show');
 
 
@@ -48,7 +48,7 @@ Route::get('/', function () {
 
 
 Route::get('/home', function () {
-    return view('welcome');
+    return view('home');
 })->name('home')->middleware('auth');
 
 
@@ -97,26 +97,18 @@ Route::middleware('auth', 'is_admin')->prefix('admin')->name('admin.')->group(fu
     Route::resource('jurusan', JurusanController::class);
 });
 
-Route::middleware(['auth', 'is_admin'])->group(function () {
-    Route::get('/admin/staff', [StaffController::class, 'index'])->name('admin.staff.index');
-    Route::get('/admin/staff/create', [StaffController::class, 'create'])->name('admin.staff.create');
-    
-    Route::post('/admin/staff', [StaffController::class, 'store'])->name('admin.staff.store');
-    Route::get('/admin/{staff}/edit', [StaffController::class, 'edit'])->name('admin.staff.edit');
-    Route::put('/admin/staff/{staff}', [StaffController::class, 'update'])->name('admin.staff.update');
-    Route::delete('/admin/staff/{staff}', [StaffController::class, 'destroy'])->name('admin.staff.destroy');
-    
-});
 
+Route::middleware(['auth','is_admin'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
 
-
-Route::middleware(['auth', 'is_admin'])->group(function () {
-    Route::get('/admin/news', [NewsController::class, 'index'])->name('admin.news.index');
-    Route::get('/admin/news/create', [NewsController::class, 'create'])->name('admin.news.create');
-    Route::post('/admin/news', [NewsController::class, 'store'])->name('admin.news.store');
-    Route::get('/admin/news/{id}/edit', [NewsController::class, 'edit'])->name('admin.news.edit');
-    Route::put('/admin/news/{id}', [NewsController::class, 'update'])->name('admin.news.update');
-    Route::delete('/admin/news/{id}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
+        Route::get('/staff', [StaffController::class, 'index'])->name('staff.index');
+        Route::get('/staff/create', [StaffController::class, 'create'])->name('staff.create');
+        Route::post('/staff', [StaffController::class, 'store'])->name('staff.store');
+        Route::get('/staff/{staff}/edit', [StaffController::class, 'edit'])->name('staff.edit');
+        Route::put('/staff/{staff}', [StaffController::class, 'update'])->name('staff.update');
+        Route::delete('/staff/{staff}', [StaffController::class, 'destroy'])->name('staff.destroy');
 });
 
 
@@ -148,3 +140,19 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->n
 Route::get('/login-admin', function () {
     return view('auth.login_admin_page');
 })->name('login.admin.page');
+
+
+
+use App\Http\Controllers\PpdbController;
+
+// USER
+Route::get('/ppdb', [PpdbController::class, 'create'])->name('ppdb.create');
+Route::post('/ppdb', [PpdbController::class, 'store'])->name('ppdb.store');
+
+// ADMIN (sesuaikan middleware admin kamu kalau ada)
+Route::middleware(['auth', 'is_admin'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::get('/ppdb', [PpdbController::class, 'index'])->name('ppdb.index');
+    });

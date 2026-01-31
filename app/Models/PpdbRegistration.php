@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Staff extends Model
+class PpdbRegistration extends Model
 {
     use HasFactory;
 
-    protected $table = 'staffs'; 
     protected $fillable = [
-        'name',
-        'photo',
-        'department',
-        'quote',
-        'type',
+        'nama_lengkap',
+        'jurusan',
+        'whatsapp',
+        'asal_sekolah',
+        'alamat_lengkap',
+        'tahun_lulus',
     ];
 }

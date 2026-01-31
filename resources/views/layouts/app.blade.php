@@ -122,7 +122,7 @@
 
                 <!-- Dropdown untuk Staff -->
                 <li class="dropdown">
-                    <a href="{{ route('staff.index')}}">Staf</a>
+                    <a href="{{ route('tim_sekolah.index')}}">Tim Sekolah</a>
                     
                 </li>
                 <li><a href="#kontak">Kontak</a></li>
@@ -335,5 +335,6 @@
 
     <script ></script>
     @stack('scripts')
+    
 </body>
 </html>

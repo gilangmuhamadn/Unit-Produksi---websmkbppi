@@ -123,9 +123,9 @@
         <div class="form-group">
             <label for="type">Jenis Staf:</label>
             <select name="type" id="type" required>
-                <option value="">-- Pilih Jenis Staf --</option>
+                <option value="">-- Pilih Jenis jabatan --</option>
                 <option value="pengajar">Staf Pengajar</option>
-                <option value="tu">Staf TU</option>
+                <option value="tu">Guru</option>
             </select>
         </div>
 
@@ -137,7 +137,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn-submit">Tambah Staff</button>
+        <button type="submit" class="btn-submit">Tambah Tim</button>
     </form>
 </div>
 

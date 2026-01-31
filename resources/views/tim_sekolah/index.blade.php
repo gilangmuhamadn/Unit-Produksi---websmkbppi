@@ -140,7 +140,7 @@
     </div>
     
     <!-- Tambahan untuk Staff TU -->
-    <h1 class="title" style="margin-top: 50px;">Staff TU</h1>
+    <h1 class="title" style="margin-top: 50px;">Tim Sekolah</h1>
     <div class="staff-grid">
         @foreach($tuStaffs as $staff)
         <div class="staff-card">
@@ -154,9 +154,9 @@
                     <div class="action-buttons">
                         <a href="{{ route('admin.staff.edit', $staff->id) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('admin.staff.destroy', $staff->id) }}" method="POST" class="delete-form">
-    @csrf
-    @method('DELETE')
-    <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="{{ $staff->id }}" data-name="{{ $staff->name }}">Hapus</button>
+        @csrf
+        @method('DELETE')
+        <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="{{ $staff->id }}" data-name="{{ $staff->name }}">Hapus</button>
 </form>
 
                     </div>
@@ -164,7 +164,7 @@
                 </div>
             </div>
             @endforeach
-        </div>
+    </div>
     </div>
     
 </div>

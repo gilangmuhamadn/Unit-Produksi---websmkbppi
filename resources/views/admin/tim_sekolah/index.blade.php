@@ -124,9 +124,9 @@
 </style>
 
 <div class="container">
-    <h1 class="title">Staf Pengajar</h1>
+    <h1 class="title">Staff Pengajar</h1>
     @auth
-        <a href="{{ route('staff.create') }}" class="btn btn-primary mb-3">Tambah Staf Pengajar</a>
+        <a href="{{ route('admin.staff.create') }}" class="btn btn-primary mb-3">Tambah Staff Pengajar</a>
     @endauth
     <div class="staff-grid">
         @foreach($teachingStaffs as $staff)
@@ -138,8 +138,8 @@
                 <blockquote class="staff-quote">"{{ $staff->quote }}"</blockquote>
                 @auth
                     <div class="action-buttons">
-    <a href="{{ route('staff.edit', $staff->id) }}" class="btn btn-warning btn-sm">Edit</a>
-    <form action="{{ route('staff.destroy', $staff->id) }}" method="POST">
+    <a href="{{ route('admin.staff.edit', $staff->id) }}" class="btn btn-warning btn-sm">Edit</a>
+    <form action="{{ route('admin.staff.destroy', $staff->id) }}" method="POST">
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
@@ -153,9 +153,9 @@
     </div>
 
     <!-- Tambahan untuk Staff TU -->
-    <h1 class="title" style="margin-top: 50px;">Staff TU</h1>
+    <h1 class="title" style="margin-top: 50px;">Tim Sekolah</h1>
     @auth
-        <a href="{{ route('staff.create') }}" class="btn btn-primary mb-3">Tambah Staff TU</a>
+        <a href="{{ route('admin.staff.create') }}" class="btn btn-primary mb-3">Tambah Tim Sekolah</a>
     @endauth
     <div class="staff-grid">
         @foreach($tuStaffs as $staff)
@@ -167,8 +167,8 @@
                 <blockquote class="staff-quote">"{{ $staff->quote }}"</blockquote>
                 @auth
                     <div class="action-buttons">
-                        <a href="{{ route('staff.edit', $staff->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                        <form action="{{ route('staff.destroy', $staff->id) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('admin.staff.edit', $staff->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <form action="{{ route('admin.staff.destroy', $staff->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>

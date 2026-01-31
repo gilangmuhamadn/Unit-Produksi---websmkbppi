@@ -31,8 +31,6 @@
 
 <body>
 
-
-
 <!-- navbar start -->
     <header>
     @if(session('welcome_message'))
@@ -92,9 +90,9 @@
                 <!-- Ekstrakurikuler -->
                 <li><a href="{{ route('ekskul.index') }}">Ekstrakurikuler</a></li>
 
-                <!-- Dropdown untuk Staff -->
+                <!-- Tim Sekolah -->
                 <li class="dropdown">
-                    <a href="{{ route('staff.index')}}">Staf</a>
+                    <a href="{{ route('tim_sekolah.index')}}">Tim Sekolah</a>
                     
                 </li>
                 <li><a href="#contact">Kontak</a></li>
@@ -241,6 +239,7 @@
                 <li>Mengembangkan dan memacu propesionalisme kerja, baik guru maupun tenaga tata laksana sehingga diperoleh sumber daya yang berkualitas</li>
                 <li>Menyiapkan lulusan dapat diserap oleh Dunia Industri, mampu berwirausaha dan dapat melanjutkan studi ke jenjang berikutnya</li>
                 <li>Mewujudkan lingkungan sekolah yang hijau, indah, aman dan Nyaman.</li>
+                <li><a href="{{ route('admin.ppdb.index') }}">PPDB</a></li>
 
               </ul>
             </div>
@@ -349,7 +348,7 @@
                     <br>
 
                     <!-- Staff -->
-                    <h2 style="text-align: center; font-size: 28px; font-weight: bold;">Staf</h2>
+                    <h2 style="text-align: center; font-size: 28px; font-weight: bold;">Tim Sekolah</h2>
                     <div class="divider-with-text hidden">
                         <span></span>
                     </div>
@@ -366,14 +365,14 @@
                     </div>
 
                     <div class="text-center mt-3">
-                        <a href="{{ route('staff.index') }}" class="btn btn-outline-primary" id="btn-ot">
+                        <a href="{{ route('tim_sekolah.index') }}" class="btn btn-outline-primary" id="btn-ot">
                             Lihat Staf Lainnya
                         </a>
                     </div>
 
                 </div> <!-- akhir artikel-dan-staff-wrapper -->
             </div> 
-</section
+</section>
 
 
 <!-- Jurusan Section -->
@@ -789,5 +788,99 @@ function showJurusan(id, nama, deskripsi, logo, link) {
 
 
     <script src="script.js"></script>
+
+
+
+    <!-- POPUP PPDB -->
+<div id="ppdbPopupOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.65); z-index:9999;">
+  <div style="
+      background:#fff;
+      max-width:520px;
+      margin:8vh auto;
+      border-radius:14px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 12px 30px rgba(0,0,0,.25);
+  ">
+
+    <!-- HEADER -->
+    <div style="padding:14px 18px; display:flex; align-items:center; justify-content:space-between;">
+      <div style="font-weight:800; letter-spacing:.3px;">
+        Pendaftaran Siswa Baru
+      </div>
+
+      <button onclick="closePpdbPopup()"
+        style="border:none; background:transparent; font-size:22px; line-height:1; cursor:pointer; color:#444;">
+        &times;
+      </button>
+    </div>
+
+    <!-- IMAGE -->
+    <div style="padding:0 18px 12px 18px;">
+      <img
+        src="{{ asset('img/popup.png') }}"
+        alt="PPDB"
+        style="width:100%; border-radius:12px; display:block;"
+      >
+    </div>
+
+    <!-- CONTENT -->
+    <div style="padding:0 18px 18px 18px;">
+      <div style="font-size:22px; font-weight:900; margin-bottom:6px; color:#1f2a37;">
+        SPMB 2025/2026
+      </div>
+
+      <div style="font-size:15px; line-height:1.6; color:#374151; margin-bottom:14px;">
+        Pendaftaran PPDB sudah dibuka. Ayo segera daftarkan diri kamu dan pastikan kamu mendapatkan pendidikan yang unggul dan berkualitas di sini.
+      </div>
+
+      <!-- BUTTONS -->
+      <div style="display:flex; gap:10px;">
+        <a href="{{ route('ppdb.create') }}"
+          style="
+            flex:1;
+            text-align:center;
+            padding:12px 14px;
+            background:#168AC7;
+            color:#fff;
+            border-radius:10px;
+            text-decoration:none;
+            font-weight:800;
+          ">
+          Daftar Sekarang
+        </a>
+
+        <button onclick="closePpdbPopup()"
+          style="
+            padding:12px 14px;
+            background:#e5e7eb;
+            border:none;
+            border-radius:10px;
+            cursor:pointer;
+            font-weight:700;
+          ">
+          Nanti
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function closePpdbPopup(){
+    localStorage.setItem("ppdb_popup_closed", "1");
+    document.getElementById("ppdbPopupOverlay").style.display = "none";
+  }
+
+  window.addEventListener("load", function(){
+    const closed = localStorage.getItem("ppdb_popup_closed");
+    if(!closed){
+      document.getElementById("ppdbPopupOverlay").style.display = "block";
+    }
+  });
+</script>
+
+
 </body>
 </html>
