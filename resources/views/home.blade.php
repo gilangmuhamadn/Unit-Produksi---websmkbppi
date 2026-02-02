@@ -68,6 +68,15 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{ route('articles.index') }}">Artikel</a></li>
                         <li><a href="{{ route('news.index') }}">Berita</a></li>
+                        @auth
+        @if(auth()->user()->role === 'admin')
+            <li><a href="{{ route('admin.ppdb.index') }}">PPDB</a></li>
+        @else
+            <li><a href="{{ route('ppdb.create') }}">PPDB</a></li>
+        @endif
+    @else
+        <li><a href="{{ route('ppdb.create') }}">PPDB</a></li>
+    @endauth
                     </ul>
                 </li>
 
