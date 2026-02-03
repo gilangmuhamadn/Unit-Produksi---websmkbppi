@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\PpdbRegistration;
 use Illuminate\Http\Request;
 
@@ -36,4 +36,15 @@ class PpdbController extends Controller
         $data = PpdbRegistration::latest()->paginate(10);
         return view('admin.ppdb.index', compact('data'));
     }
+
+    public function exportPdf()
+{
+    $data = \App\Models\PpdbRegistration::orderBy('created_at', 'desc')->get();
+
+    $pdf = Pdf::loadView('admin.ppdb.pdf', compact('data'))
+        ->setPaper('A4', 'landscape');
+
+    return $pdf->download('data-ppdb.pdf');
+}
+
 }

@@ -156,3 +156,10 @@ Route::middleware(['auth', 'is_admin'])
     ->group(function () {
         Route::get('/ppdb', [PpdbController::class, 'index'])->name('ppdb.index');
     });
+
+    Route::get('/admin/ppdb/export-pdf', [PpdbController::class, 'exportPdf'])->name('admin.ppdb.export.pdf');
+
+
+    
+
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');

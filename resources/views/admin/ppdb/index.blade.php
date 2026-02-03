@@ -5,6 +5,9 @@
 @section('content')
 <div class="container" style="margin-top:30px;">
     <h3>Data Pendaftar PPDB</h3>
+    <a href="{{ route('admin.ppdb.export.pdf') }}" class="btn btn-sm btn-danger mt-2">
+    Export PDF
+</a>
 
     <div style="overflow-x:auto;">
         <table class="table table-bordered mt-3">

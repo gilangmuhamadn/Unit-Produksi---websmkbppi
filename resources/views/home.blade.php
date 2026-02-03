@@ -68,15 +68,15 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{ route('articles.index') }}">Artikel</a></li>
                         <li><a href="{{ route('news.index') }}">Berita</a></li>
-                        @auth
-        @if(auth()->user()->role === 'admin')
-            <li><a href="{{ route('admin.ppdb.index') }}">PPDB</a></li>
-        @else
-            <li><a href="{{ route('ppdb.create') }}">PPDB</a></li>
-        @endif
-    @else
-        <li><a href="{{ route('ppdb.create') }}">PPDB</a></li>
-    @endauth
+                            @auth
+                                @if(auth()->user()->role === 'admin')
+                        <li><a href="{{ route('admin.ppdb.index') }}">PPDB</a></li>
+                                    @else
+                        <li><a href="{{ route('ppdb.create') }}">PPDB</a></li>
+                                    @endif
+                                @else
+                        <li><a href="{{ route('ppdb.create') }}">PPDB</a></li>
+                             @endauth
                     </ul>
                 </li>
 
@@ -248,7 +248,7 @@
                 <li>Mengembangkan dan memacu propesionalisme kerja, baik guru maupun tenaga tata laksana sehingga diperoleh sumber daya yang berkualitas</li>
                 <li>Menyiapkan lulusan dapat diserap oleh Dunia Industri, mampu berwirausaha dan dapat melanjutkan studi ke jenjang berikutnya</li>
                 <li>Mewujudkan lingkungan sekolah yang hijau, indah, aman dan Nyaman.</li>
-                <li><a href="{{ route('admin.ppdb.index') }}">PPDB</a></li>
+                
 
               </ul>
             </div>
@@ -507,11 +507,21 @@
         @endforeach
     </div>
 
-    @if(auth()->check() && auth()->user()->role === 'admin') {{-- Cek apakah user adalah admin --}}
+    
         <div style="text-align: center; margin-top: 20px;">
-            <a href="{{ route('admin.gallery.index') }}" class="btn btn-primary">Lainnya</a>
-        </div>
+            @auth
+    @if(auth()->user()->role === 'admin')
+        {{-- ADMIN: ke halaman kelola gallery --}}
+        <a href="{{ route('admin.gallery.index') }}" class="btn btn-outline-primary">Kelola Gallery</a>
+    @else
+        {{-- USER: ke halaman lihat semua gallery --}}
+        <a href="{{ route('gallery.index') }}" class="btn btn-outline-primary">Selengkapnya</a>
     @endif
+@else
+    {{-- BELUM LOGIN: tetap bisa lihat gallery --}}
+    <a href="{{ route('gallery.index') }}" class="btn btn-outline-primary">Selengkapnya</a>
+@endauth
+        </div>
 </section>
 
 
